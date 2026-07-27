@@ -2,7 +2,7 @@
 Toggl Track MCP Server
 Exposes Toggl time-tracking as MCP tools for Claude (Claude.ai, Obot, Claude Code).
 
-Transport: streamable-HTTP on 0.0.0.0:9000/mcp
+Transport: stdio — works with Obot (UVX runtime), Claude Desktop, Claude Code.
 
 Required env var:
     TOGGL_API_TOKEN      — your Toggl API token (Profile Settings → API Token)
@@ -18,7 +18,7 @@ import time
 from . import client as toggl
 from mcp.server.fastmcp import FastMCP
 
-mcp = FastMCP("Toggl Track", host="0.0.0.0", port=9000)
+mcp = FastMCP("Toggl Track")
 
 
 # ── Tools ─────────────────────────────────────────────────────────────────────
