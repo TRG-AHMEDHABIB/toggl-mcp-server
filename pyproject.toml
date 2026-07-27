@@ -20,6 +20,9 @@ dependencies = [
 
 [project.scripts]
 toggl-mcp-trg = "toggl_mcp.__main__:main"
+# Alias — the Obot server config invokes `toggl-mcp`. Kept so the gateway
+# works whether it asks for the package name or the short name.
+toggl-mcp = "toggl_mcp.__main__:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/toggl_mcp"]
